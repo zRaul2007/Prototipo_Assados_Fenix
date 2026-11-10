@@ -197,7 +197,7 @@ assados-fenix-delivery/
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/<seu-usuario>/assados-fenix-delivery.git
+git clone https://github.com/zRaul2007/Prototipo_Assados_Fenix.git
 cd assados-fenix-delivery
 
 # 2. Crie o banco de dados e importe os scripts de /database
@@ -218,11 +218,8 @@ cd assados-fenix-delivery
 | Raul Pedrogan de Moura |
 | Raul Velasco Candido Roberto |
 
-**Orientador:** Prof. Gilberto Jose da Cunha
-**Coorientadora:** Prof.ª Ana Rosa Coiahy Tonão
-
 **Instituição:** Faculdade de Tecnologia de Mogi das Cruzes — Curso de Tecnologia em Análise e Desenvolvimento de Sistemas · Mogi das Cruzes, SP · 2026
 
 ## 📄 Licença
 
-Projeto acadêmico desenvolvido para fins educacionais. Defina aqui a licença desejada (por exemplo, MIT) ou mantenha todos os direitos reservados aos autores e ao estabelecimento parceiro.
+Projeto acadêmico desenvolvido para fins educacionais. 
