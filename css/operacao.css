@@ -1,0 +1,234 @@
+/*
+ * OPERAÇÃO — fila de pedidos e estoque (atendente/administrador) e entregas
+ */
+
+/* ===== Fila de pedidos: quadro em colunas e cartões ===== */
+.quadro {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(255px, 1fr));
+  gap: 16px;
+  align-items: start;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.col__h {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 4px;
+  border-bottom: 2px solid var(--c, var(--amarelo));
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.col__h span {
+  background: var(--preto-700);
+  border: 1px solid var(--preto-600);
+  font-size: 12px;
+  padding: 2px 9px;
+  border-radius: 999px;
+}
+.po {
+  background: var(--preto-800);
+  border: 1px solid var(--preto-600);
+  border-radius: var(--raio-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.po.fim {
+  opacity: 0.75;
+}
+.po__t {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.po__n {
+  font-family: var(--fonte-display);
+  font-size: 15.5px;
+  font-weight: 600;
+}
+.po__c {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+.po__i {
+  font-size: 12.5px;
+  color: var(--cinza-400);
+}
+.duo {
+  display: flex;
+  gap: 8px;
+}
+.duo .btn {
+  flex: 1;
+  margin: 0;
+  padding: 10px;
+}
+.opt {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border: 1px solid var(--preto-600);
+  background: var(--preto-700);
+  border-radius: var(--raio-sm);
+  padding: 10px 12px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.opt:has(input:checked) {
+  border-color: var(--amarelo);
+  background: rgba(242, 169, 59, 0.1);
+}
+.opt input {
+  accent-color: var(--amarelo);
+}
+.opt:has(input:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== Estoque: cartões, quantidade digitável e movimentações ===== */
+.est {
+  background: var(--preto-800);
+  border: 1px solid var(--preto-600);
+  border-radius: var(--raio-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 4px solid var(--verde-ok);
+}
+.est__t {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: flex-start;
+}
+.est__t small {
+  display: block;
+  color: var(--cinza-400);
+  font-size: 11.5px;
+}
+.movs {
+  background: var(--preto-800);
+  border: 1px solid var(--preto-600);
+  border-radius: var(--raio-lg);
+  padding: 4px 18px;
+}
+.mv {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(58, 50, 42, 0.5);
+  font-size: 13px;
+  color: var(--cinza-200);
+  flex-wrap: wrap;
+}
+.mv:last-child {
+  border: 0;
+}
+.mv span {
+  flex: 1;
+  min-width: 200px;
+}
+.mv.neg b {
+  color: var(--vermelho);
+}
+.mv.pos b {
+  color: var(--verde-ok);
+}
+.mv small {
+  color: var(--cinza-400);
+}
+.grade-est {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.est.e-low {
+  border-left-color: var(--amarelo);
+}
+.est.e-zero {
+  border-left-color: var(--vermelho);
+}
+.est__t .badge {
+  align-self: flex-start;
+  white-space: nowrap;
+}
+.est__q {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.est__q > button {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--preto-700);
+  border: 1px solid var(--preto-600);
+  color: var(--branco);
+  font-size: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.est__q > button:hover {
+  border-color: var(--amarelo);
+  color: var(--amarelo);
+}
+.qw {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.qtd {
+  width: 100%;
+  text-align: center;
+  background: var(--preto-700);
+  border: 1px solid var(--preto-600);
+  border-radius: var(--raio-sm);
+  color: var(--branco);
+  font-family: var(--fonte-display);
+  font-size: 30px;
+  padding: 6px;
+  -moz-appearance: textfield;
+}
+.qtd::-webkit-inner-spin-button,
+.qtd::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.qtd:focus {
+  border-color: var(--amarelo);
+  outline: none;
+}
+.qw small {
+  font-size: 11.5px;
+  color: var(--cinza-400);
+  margin-top: 4px;
+}
+.est__bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--preto-700);
+  overflow: hidden;
+}
+.est__bar i {
+  display: block;
+  height: 100%;
+  background: var(--verde-ok);
+}
+.e-low .est__bar i {
+  background: var(--amarelo);
+}
+.e-zero .est__bar i {
+  background: var(--vermelho);
+}

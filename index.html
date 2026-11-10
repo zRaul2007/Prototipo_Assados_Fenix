@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fênix Casa dos Assados</title>
+    <meta name="description" content="Pedidos e entregas — Fênix Casa dos Assados" />
+
+    <!-- Fontes: Oswald (títulos e preços) e Inter (textos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos. A ordem importa: cada arquivo pode complementar o anterior. -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/componentes.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/cliente.css" />
+    <link rel="stylesheet" href="css/operacao.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+
+  <body>
+    <!-- Ícones SVG usados em todas as telas, referenciados por <use href="#i-nome"> -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+    <symbol id="i-fila" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10" /></symbol>
+    <symbol id="i-garrafa" viewBox="0 0 24 24"><path d="M10 2h4v3.5l1.5 2V21a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V7.5L10 5.5V2zM9 12h6" /></symbol>
+    <symbol id="i-grafico" viewBox="0 0 24 24"><path d="M4 20V10M12 20V4M20 20v-7M2 20h20" /></symbol>
+    <symbol id="i-perfis" viewBox="0 0 24 24"><path d="M6 8a3 3 0 1 0 6 0 3 3 0 1 0-6 0M2.5 19c1-3.2 4-5 6.5-5s5.5 1.8 6.5 5M15.6 8a2.4 2.4 0 1 0 4.8 0 2.4 2.4 0 1 0-4.8 0M15.5 14.5c2.3.3 4 1.7 4.8 4.5" /></symbol>
+    <symbol id="i-livro" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h16M9 9v11" /></symbol>
+    <symbol id="i-sair" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" /></symbol>
+    <symbol id="i-usuario" viewBox="0 0 24 24"><path d="M8 8a4 4 0 1 0 8 0 4 4 0 1 0-8 0M4 20c1.5-4 5-6 8-6s6.5 2 8 6" /></symbol>
+    <symbol id="i-mais" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" /></symbol>
+    <symbol id="i-lapis" viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19zM14 7l3 3" /></symbol>
+    <symbol id="i-lixeira" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13" /></symbol>
+    <symbol id="i-alerta" viewBox="0 0 24 24"><path d="M12 8v5M12 16h.01M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0" /></symbol>
+    <symbol id="i-fogo" viewBox="0 0 24 24"><path d="M12 2c1 3-2 4-2 7a3 3 0 0 0 6 0c1.5 1.5 2 3.5 2 5.5A6.5 6.5 0 0 1 5 14.5C5 9 9 6 12 2z" /></symbol>
+    <symbol id="i-tigela" viewBox="0 0 24 24"><path d="M4 11h16a8 8 0 0 1-16 0zM12 11V6M9 6a3 3 0 0 1 6 0" /></symbol>
+    <symbol id="i-copo" viewBox="0 0 24 24"><path d="M7 3h10l-1 13a3 3 0 0 1-3 3h-2a3 3 0 0 1-3-3L7 3zM7.6 8h8.8" /></symbol>
+    <symbol id="i-mapa" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z" /></symbol>
+    <symbol id="i-etiqueta" viewBox="0 0 24 24"><path d="M3 12V3h9l9 9-9 9z" /></symbol>
+    <symbol id="i-carrinho" viewBox="0 0 24 24"><path d="M3 4h2l2.4 12.2a2 2 0 0 0 2 1.8h7.2a2 2 0 0 0 2-1.6L21 8H6M8 21a1 1 0 1 0 2 0 1 1 0 1 0-2 0M16 21a1 1 0 1 0 2 0 1 1 0 1 0-2 0" /></symbol>
+    <symbol id="i-moto" viewBox="0 0 24 24"><path d="M6 18l3-7h4l3 4h3M9 11l1.5-3H14M3.6 18a2.4 2.4 0 1 0 4.8 0 2.4 2.4 0 1 0-4.8 0M15.6 18a2.4 2.4 0 1 0 4.8 0 2.4 2.4 0 1 0-4.8 0" /></symbol>
+    <symbol id="i-balcao" viewBox="0 0 24 24"><path d="M3 21h18M4 21V10l8-6 8 6v11M9 21v-6h6v6" /></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11zM9.5 10a2.5 2.5 0 1 0 5 0 2.5 2.5 0 1 0-5 0" /></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" /></symbol>
+    <symbol id="i-busca" viewBox="0 0 24 24"><path d="M4 11a7 7 0 1 0 14 0 7 7 0 1 0-14 0M21 21l-5-5" /></symbol>
+    <symbol id="i-relogio" viewBox="0 0 24 24"><path d="M12 7v5l3 3M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0" /></symbol>
+    <symbol id="i-historico" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5" /></symbol>
+    <symbol id="i-cartao" viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zM2 10h20" /></symbol>
+    <symbol id="i-dinheiro" viewBox="0 0 24 24"><path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2zM9 12a3 3 0 1 0 6 0 3 3 0 1 0-6 0" /></symbol>
+    </svg>
+
+    <!-- Raiz da aplicação: login ou a tela do perfil, desenhados por js/nucleo.js -->
+    <div id="app"></div>
+
+    <!-- Camada escura, janela (modal) e mensagem rápida (toast), controladas por js/nucleo.js -->
+    <div class="fundo" id="fundo" data-a="x"></div>
+    <div class="modal" id="mod" role="dialog" aria-modal="true"></div>
+    <div class="toast" id="toast" role="status"></div>
+
+    <!--
+      Scripts, na ordem em que dependem uns dos outros:
+      dados -> utilitários -> núcleo -> telas -> app (eventos e inicialização)
+    -->
+    <script src="js/dados.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/nucleo.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/cliente.js"></script>
+    <script src="js/operacao.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/catalogo.js"></script>
+    <script src="js/perfis.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,211 @@
+/*
+ * LAYOUT — cabeçalho, menu e área de conteúdo
+ */
+
+/* ===== Cabeçalho: marca, menu centralizado e dados do usuário ===== */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(15, 13, 12, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--preto-600);
+}
+.topo__faixa {
+  display: grid;
+  align-items: center;
+  gap: 16px;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+}
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.marca__selo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(155deg, var(--amarelo), var(--vermelho) 130%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fonte-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--preto-900);
+}
+.marca__texto h1 {
+  font-family: var(--fonte-display);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+.marca__texto p {
+  font-size: 11.5px;
+  color: var(--cinza-400);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.nav-principal {
+  display: flex;
+  gap: 4px;
+  background: var(--preto-800);
+  border: 1px solid var(--preto-600);
+  border-radius: 999px;
+  padding: 4px;
+  justify-self: center;
+  overflow-x: auto;
+  max-width: 100%;
+}
+.nav-principal a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--cinza-200);
+  white-space: nowrap;
+  transition:
+    background var(--duracao),
+    color var(--duracao);
+}
+.nav-principal a[aria-current='page'] {
+  background: var(--amarelo);
+  color: var(--preto-900);
+  font-weight: 600;
+}
+.nav-principal a:not([aria-current='page']):hover {
+  background: var(--preto-700);
+  color: var(--branco);
+}
+.topo__acoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-self: end;
+}
+@media (max-width: 1260px) {
+  .topo__faixa {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .nav-principal {
+    grid-column: 1/-1;
+    grid-row: 2;
+  }
+}
+.perfil-usuario {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--preto-800);
+  border: 1px solid var(--preto-600);
+  padding: 6px 14px 6px 6px;
+  border-radius: 999px;
+}
+.perfil-usuario__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--preto-700);
+  border: 1px solid var(--preto-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--amarelo);
+}
+.perfil-usuario__texto {
+  line-height: 1.2;
+}
+.perfil-usuario__texto strong {
+  display: block;
+  font-size: 13px;
+}
+.perfil-usuario__texto span {
+  font-size: 11px;
+  color: var(--cinza-400);
+}
+@media (max-width: 640px) {
+  .perfil-usuario__texto {
+    display: none;
+  }
+}
+.botao-sair {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--preto-800);
+  border: 1px solid var(--preto-600);
+  color: var(--cinza-200);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.botao-sair:hover {
+  border-color: var(--vermelho);
+  color: var(--vermelho);
+}
+.botao-icone {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--preto-800);
+  border: 1px solid var(--preto-600);
+  color: var(--branco);
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+.botao-icone:hover {
+  border-color: var(--amarelo);
+}
+.badge-contador {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--vermelho);
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 19px;
+  height: 19px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--preto-900);
+}
+
+/* ===== Área de conteúdo e títulos de página ===== */
+.pagina-titulo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.pagina-titulo h2 {
+  font-family: var(--fonte-display);
+  font-size: 26px;
+  font-weight: 600;
+}
+.pagina-titulo p {
+  font-size: 13.5px;
+  color: var(--cinza-400);
+}
+.conteudo {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 22px 20px 120px;
+}
