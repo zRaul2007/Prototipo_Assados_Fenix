@@ -22,8 +22,6 @@ Projeto desenvolvido na disciplina **Projeto Integrador I** do curso Superior de
 - [Tecnologias](#-tecnologias)
 - [Engenharia de requisitos](#-engenharia-de-requisitos)
 - [Modelagem](#-modelagem)
-- [Protótipo](#-protótipo)
-- [Cronograma](#-cronograma)
 - [Estrutura do repositório](#-estrutura-do-repositório)
 - [Como executar](#-como-executar)
 - [Equipe](#-equipe)
@@ -170,28 +168,6 @@ Carrinho → Finalizar pedido → Pagamento confirmado → Em Preparo → (Em Ro
                                      │
                                      └─ PIX: aguarda conferência do comprovante (RN09)
 ```
-
-## 🎨 Protótipo
-
-Protótipo de alta fidelidade elaborado no **Figma**, com **14 telas**:
-
-- **Login** (1 tela)
-- **Portal do cliente** (7 telas): Cardápio, Carrinho, Tipo de Entrega, Forma de Pagamento, Status do Pedido, Meu Pedido e Histórico
-- **Portal do administrador** (6 telas): Dashboard, Pedidos, Cardápio, Clientes, Usuários e Estoque
-
-<!-- Adicione o link do Figma ou prints das telas aqui -->
-
-## 🗓️ Cronograma
-
-| # | Atividade | Período |
-| :-: | --- | --- |
-| 1 | Levantamento bibliográfico, análise de concorrentes e definição de tecnologias | 19/08 – 01/09/2026 |
-| 2 | Entrevista com a comunidade externa, definição do problema e mapeamento BPMN | 02/09 – 15/09/2026 |
-| 3 | Visita ao estabelecimento e levantamento de requisitos | 16/09 – 29/09/2026 |
-| 4 | Protótipo/wireframes, início do back-end e front-end e Relatório Parcial | 30/09 – 13/10/2026 |
-| 5 | Módulos de pagamento, cálculo de frete e painel administrativo; testes parciais | 14/10 – 27/10/2026 |
-| 6 | Testes finais, validação com a comunidade externa, responsividade e vídeo de apresentação | 28/10 – 10/11/2026 |
-| 7 | Relatório Final, edição do vídeo e entrega formal | 11/11 – 24/11/2026 |
 
 ## 📁 Estrutura do repositório
 
